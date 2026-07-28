@@ -3,20 +3,26 @@
     The 'document' keyword opens up the entire tree. We can reach the body instantly.
     Note the camelCase spelling differences on the Style Object (eg: backgroundColor vs background-color)
 */
+document.body.style.backgroundColor="maroon";
 
 
-
-
+let username = prompt("Give me your name,ole")
+username= username.toUpperCase();
 // TASK 2: SELECTING AND STYLING BY ID
 // getElementById strictly targets a unique ID string (No hashtag required!)
 
+// selected the element with id: main-heading
+const heading = document.getElementById("main-heading");
+
+// we have changed the innerText of that element
+heading.innerText=`Welcome ${username}`;
 
 
 // Modifying Content
-
+heading.style.fontFamily = "kanit";
 
 // Modifying Style via ID Selectors
-
+// document.querySelector(".badge");
 
 
 // TASK 3: SELECTING AND STYLING WITH QUERYSELECTOR
@@ -26,9 +32,16 @@
 */
 
 // Styling a class using querySelector
+const badge = document.querySelector(".badge");
+badge.style.backgroundColor = "navy";
+badge.style.color = "white";
 
 
 // Altering text of an ID using querySelector
+const status = document.querySelector("#status-text");
+status.innerText = `${username} You are far Above and not beneath `;
+status.style.fontWeight = "semi-bold";
+
 
 
 
@@ -44,7 +57,8 @@
     .innerText only treats text as a literal string. 
     .innerHTML lets you inject raw HTML formatting tags right through your JavaScript.
 */
-
+const description = document.querySelector(".description")
+description.innerHTML = "Account Status:  <b><u>Suspended</u></b>";
 
 
 // TASK 6: MANIPULATING CLASSES WITH .CLASSLIST
@@ -55,6 +69,8 @@
     A better way is to write the styling rule in CSS, and use .classList.add() to apply it.
     Note: For this to work, ensure you add '.alert-mode { border: 3px solid red; }' to your style.css file!
 */
+const cardContainer = document.querySelector(".card-container");
+cardContainer.classList.add("alert-mode");
 
 
 
